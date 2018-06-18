@@ -8,11 +8,27 @@
  * - length: tamanho do array - número de caracteres
  * Output: A primeira letra que não se repete, ou -1, caso todas se repitam.
  */
-char firstNonRepeatingChar (char sentence[], int length)
-{
-    printf("\nfirstNonRepeatingChar::START: %s, %d\n", s, length);
+char firstNonRepeatingChar (char sentence[], int length){
+    printf("\nfirstNonRepeatingChar::START: %s, %d\n", sentence, length);
     
-    // TODO: YOUR CODE HERE!
+
+    for (int x = 0; x < length; ++x){
+    	
+    	int y = 0;
+    	for (int z = 0; z < length; ++z){
+
+    		if(sentence[z] == sentence[x]){
+    			y++;
+    			continue;
+    		}
+
+    	}
+
+    	if(y == 1){
+    		printf("A primeira letra nao repetida na palavra %s é: %c",sentence,sentence[x]);
+    		break;
+    	}
+    }
     
     printf("\nfirstNonRepeatingChar::END\n");
     return -1;
