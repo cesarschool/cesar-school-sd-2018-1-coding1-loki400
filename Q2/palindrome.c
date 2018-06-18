@@ -10,20 +10,34 @@
  * - length: tamanho do array - número de caracteres
  * Output: true se a sentença é um palídromo, falso caso negativo.
  */
-
-bool isPalindrome (char sentence[], int length) {
+bool isPalindrome(char sentence[], int length) {
     printf("\nisPalindrome::START: %s, %d\n", sentence, length);
 
-    // TODO: YOUR CODE HERE!
-    
+    int y;
+    int comeco = 0;
+    int fim = length - 1;
+    int metade = length / 2;
+
+    for (y = comeco; y < metade; y++) {
+        if (sentence[comeco] != sentence[fim]) {
+            printf("false");
+            printf("\nisPalindrome::END\n");
+            return false;
+        }
+        comeco = comeco + 1;
+        fim = fim - 1;
+    }
+
+    printf("true");
+
     printf("\nisPalindrome::END\n");
-    return false;
+    return true;
 }
 
 int main()
 {
     printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: Palindrome ###\n");
-    
+
     // true cases
     isPalindrome("ovo", 3);
     isPalindrome("arara", 5);
@@ -34,4 +48,3 @@ int main()
 
     return 0;
 }
- 
